@@ -1,0 +1,332 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #dbe2f4;
+}
+
+#sidebar {
+    max-width: 264px;
+    min-width: 264px;
+    transition: all 0.35s ease-in-out;
+    background-color:#1C673B;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar.collapsed {
+    margin-left: -264px;
+}
+
+.navbar {
+    padding: 1.15rem 1.5rem;
+}
+
+.sidebar-nav {
+    flex: 1 1 auto;
+}
+
+.sidebar-logo {
+    padding: 1.15rem 1.5rem;
+    text-align: center;
+    color: white;
+}
+
+.sidebar-logo a {
+    color: white;
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.sidebar-header {
+    color: white;
+    font-size: .75rem;
+    padding: 1.5rem 1.5rem .375rem;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: white;
+    position: relative;
+    transition: all 0.35s;
+    display: block;
+    font-size: 15px;
+}
+
+a.sidebar-link-active {
+    padding: .625rem 1.625rem;
+    color: white;
+    position: relative;
+    transition: all 0.35s;
+    display: block;
+    font-size: 15px;
+    background-color: #008060;
+}
+
+a.sidebar-link:hover {
+    background-color: #008060;
+}
+
+.sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+.sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+/* ---------- TopBar ---------- */
+.topbar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+/* ---------- Toggle ---------- */
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.toggler-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+}
+
+/* ---------- Logo ---------- */  
+.logo {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-right: 20px;
+}
+  
+.logo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Container and Layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content */
+    gap: 10px; /* Adds spacing between elements */
+    width: auto;
+    padding: 10px;
+    
+  }
+  
+  /* Search Section */
+  .search-section {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    font-family: "Merriweather", serif;
+    font-size:15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.search-box {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+  /* Buttons */
+  .button-search,
+  .button-add {
+    padding: 10px 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family: "Merriweather", serif;
+    font-size:15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  .button-search {
+    background-color:#1C673B;
+  }
+  
+  .button-search:hover {
+    background-color: #30a561;
+  }
+  
+  /* Table Styles */
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .employeeRecords {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    opacity: 0.9;
+  }
+  
+  .employeeRecords th, 
+  .employeeRecords td {
+
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-family: "Merriweather", serif;
+    font-size:15px;
+  }
+  
+  .employeeRecords th {
+    background: #1C673B; /* Green theme */
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .employeeRecords tr:hover {
+    background-color: #eafaf1;
+  }
+  
+  /* Button Styles for Actions */
+  .btn {
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s ease;
+  }
+  
+  .btn-primary { background-color: #2196F3;;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */ }
+
+  .btn-secondary { background-color: #6c757d; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */}
+  
+  
+  .btn-primary:hover { background-color: #0b7dda; }
+  .btn-secondary:hover { background-color: #545b62; }
+  
+  
+  /*pagination*/
+  .pagination {
+    display:flex;
+    list-style:none;
+    padding:0;
+    font-family: 'Merriweather', serif;
+    font-size:12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  
+  }
+  .page-item {
+    margin: 0 5px;
+    font-family: 'Merriweather', serif;
+    font-size:12px;
+  }
+  
+  .page-link {
+    display: block;
+    padding: 8px 8px;
+    text-decoration: none;
+    color:black;
+    background-color:#0d6efd;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    transition:background-color 0.3s, color 0.3s;
+    font-family: 'Merriweather', serif;
+    font-size:12px;
+  }
+  .page-link:hover {
+    background-color: #0d6efd;
+    color:#fff;
+    border-color: #0d6efd;
+  }
+  .page-item .active {
+    background-color: #0d6efd;
+    color:#fff;
+    border-color:#dee2e6;
+    font-family: 'Merriweather', serif;
+    font-size:12px;
+  
+  }
+  .page-link.disabled {
+    color:#6c757d;
+    pointer-events:none;
+    background-color:#e9ecef;
+    border-color:#dee2e6;
+    font-family: 'Merriweather', serif;
+    font-size:12px;
+  }
+  
+  .p-10 {
+      padding: 10px; 
+      text-align: center; 
+      font-family: 'Merriweather', serif; 
+      font-size: 12px; 
+      color: black; 
+  }
+  
+  .p-10 strong {
+      font-weight: bold; 
+  }
+  
+  
